@@ -74,7 +74,7 @@ const Contact = ({setSelectedTab}) => {
         </div>
         <div className="contact-info w-4/12 flex flex-col gap-4 max-md:w-full max-md:mt-5">
             <h1 className="font-semibold text-2xl text-white">Contact Info</h1>
-            <p className="text-sm opacity-80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, a?</p>
+            <p className="text-sm opacity-80">Always available for learning and implementing skills, Feel free to contact me</p>
             <div className="main-container bottom-contact flex gap-4 items-center">
              <div className="social-icons text-green-500 flex flex-col text-xl gap-8">
                <i class="fa-solid fa-signature"></i>

@@ -23,12 +23,12 @@ const About = ({setSelectedTab}) => {
             <div className="about-content-container w-7/12 flex flex-col gap-2 max-md:w-full">
                 <p className='text-xl text-green-600 font-semibold font-poppins'>Who am i?</p>
                 <p className='text-2xl font-bold font-poppins text-white'>I'm Muhammad Furqan Abbas, a Full Stack Software Engineer</p>
-                <p className='text-white opacity-80 text-sm'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, eligendi ratione optio corporis voluptatum dolorum libero eos, tenetur sit animi exercitationem similique quas est debitis molestias ea magni sapiente a quisquam dolorem in. Quibusdam architecto, eligendi animi nisi porro quae tempora cupiditate, labore, aliquid nobis veritatis corporis inventore consectetur fuga aperiam autem excepturi a dolorem veniam aliquam eius. Voluptas, officia.</p>
+                <p className='text-white opacity-80 text-sm'>I'm a passionate full stack developer with a strong foundation in both frontend and backend technologies. With a degree in Software Engineering and hands-on experience in developing scalable web applications, I specialize in building robust digital solutions that solve real-world problems. I love turning ideas into reality through clean, efficient code and intuitive user experiences.</p>
                 <hr className='border-white my-3 opacity-60'/>
                 <div className="info-container text-white text-sm max-sm:text-xs font-poppins my-4">
                     {/* make two sections in one line */}
                     <div className='flex justify-between my-2 flex-wrap'>
-                      <p className='w-1/2'>Name: <span className='opacity-70'>Muhammad Furqan Abbas</span></p>
+                      <p className='w-1/2 sm:inline-block'>Name:<br className='sm:hidden'/> <span className='opacity-70'>Muhammad Furqan Abbas</span></p>
                       <p className='w-1/2'>Email: <span className='opacity-70'>mfurqanabbas20@gmail.com</span></p>
                     </div>
                     <div className='flex justify-between'>
