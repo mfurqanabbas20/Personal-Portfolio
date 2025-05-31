@@ -1,22 +1,32 @@
 import about_img from '../assets/about_img.jpg'
-const About = () => {
+import {motion} from 'framer-motion'
+
+const About = ({setSelectedTab}) => {
+
   return (
-    <div className='py-10 bg-black transition-all'>
+    <motion.div
+    initial={{opacity: 0, y: -500}}
+    animate={{opacity: 100, y: 1}}
+    transition={{duration: 0.9}}
+    className='py-10 bg-stone-900'>
+      <div className='relative'>
         <p className='text-white text-center text-sm'>Get to know me</p>
+        <i onClick={() => setSelectedTab('home')} className="fa-solid fa-xmark text-white absolute right-6 -top-5 text-xl cursor-pointer"></i>
+      </div>
         <h1 className='font-bold text-3xl text-white text-center'>About Me</h1>
         <hr className='border-green-500 w-10 mx-auto my-3 border-2 hover:w-20 transition-all' />
-        <div className='flex pt-6 gap-14 px-10'>
-            <div className="image-container w-5/12">
+        <div className='flex pt-6 gap-14 px-10 flex-wrap max-md:px-6'>
+            <div className="image-container w-5/12 max-md:w-full">
               <img className='object-cover' src={about_img} alt="" />
             </div>
-            <div className="about-content-container w-7/12 flex flex-col gap-2">
+            <div className="about-content-container w-7/12 flex flex-col gap-2 max-md:w-full">
                 <p className='text-xl text-green-600 font-semibold font-poppins'>Who am i?</p>
                 <p className='text-2xl font-bold font-poppins text-white'>I'm Muhammad Furqan Abbas, a Full Stack Software Engineer</p>
                 <p className='text-white opacity-80 text-sm'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, eligendi ratione optio corporis voluptatum dolorum libero eos, tenetur sit animi exercitationem similique quas est debitis molestias ea magni sapiente a quisquam dolorem in. Quibusdam architecto, eligendi animi nisi porro quae tempora cupiditate, labore, aliquid nobis veritatis corporis inventore consectetur fuga aperiam autem excepturi a dolorem veniam aliquam eius. Voluptas, officia.</p>
                 <hr className='border-white my-3 opacity-60'/>
-                <div className="info-container text-white text-sm font-poppins my-4">
+                <div className="info-container text-white text-sm max-sm:text-xs font-poppins my-4">
                     {/* make two sections in one line */}
-                    <div className='flex justify-between my-2'>
+                    <div className='flex justify-between my-2 flex-wrap'>
                       <p className='w-1/2'>Name: <span className='opacity-70'>Muhammad Furqan Abbas</span></p>
                       <p className='w-1/2'>Email: <span className='opacity-70'>mfurqanabbas20@gmail.com</span></p>
                     </div>
@@ -38,7 +48,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

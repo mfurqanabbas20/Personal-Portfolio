@@ -1,4 +1,6 @@
 import logo from '../assets/logo.png'
+import cv from '../../public/CV_Furqan.pdf'
+import { Link } from 'react-router-dom'
 
 const Navbar = ({setSelectedTab}) => {
   return (
@@ -18,7 +20,7 @@ const Navbar = ({setSelectedTab}) => {
                 <li className='cursor-pointer' onClick={() => setSelectedTab('projects')}>Projects</li>
               </div>
               <div className='hover:border-b-2 border-green-600 transition-all'>
-                <li className='cursor-pointer' onClick={() => setSelectedTab('resume')}>Resume</li>
+                <li className='cursor-pointer' onClick={() => window.location.href=cv}>Resume</li>
               </div>
               <div className='hover:border-b-2 border-green-600 transition-all'>
                 <li className='cursor-pointer' onClick={() => setSelectedTab('contact')}>Contact</li>
