@@ -15,9 +15,9 @@ const About = ({setSelectedTab}) => {
       </div>
         <h1 className='font-bold text-3xl text-white text-center'>About Me</h1>
         <hr className='border-green-500 w-10 mx-auto my-3 border-2 hover:w-20 transition-all' />
-        <div className='flex pt-6 gap-14 px-10 flex-wrap max-md:px-6'>
+        <div className='flex pt-6 gap-14 px-10 max-md:flex-wrap max-md:px-6'>
             <div className="image-container w-5/12 max-md:w-full">
-              <img className='object-cover' src={about_img} alt="" />
+              <img className='object-cover rounded-lg drop-shadow-green-400 drop-shadow-xl' src={about_img} alt="" />
             </div>
             <div className="about-content-container w-7/12 flex flex-col gap-2 max-md:w-full">
                 <p className='text-xl text-green-600 font-semibold font-poppins'>Who am i?</p>
@@ -39,11 +39,10 @@ const About = ({setSelectedTab}) => {
                 <button className='bg-green-700 text-white w-40 rounded-full h-10 font-poppins text-sm'>Download CV</button>
                 <hr className='border-white w-14 opacity-80' />
                 <div className="social-icons text-white flex items-center text-lg gap-4 justify-end">
-                  <i className="cursor-pointer fa-brands fa-facebook-f"></i>
-                  <i className="cursor-pointer fa-brands fa-twitter"></i>
-                  <i className="cursor-pointer fa-brands fa-linkedin-in"></i>
-                  <i className="cursor-pointer fa-brands fa-github"></i>
-                  <i className="cursor-pointer fa-brands fa-instagram"></i>
+                  <a href="https://www.facebook.com/malikmuhammadfurqan.abbas" target="_blank"><i className="cursor-pointer fa-brands fa-facebook-f"></i></a>
+                  <a href="https://www.linkedin.com/in/muhammad-furqan-abbas-870125233" target="_blank"><i className="cursor-pointer fa-brands fa-linkedin-in"></i></a>
+                  <a href="https://www.upwork.com/freelancers/~017100bad51363e86d" target="_blank"><i className="fa-brands fa-upwork cursor-pointer"></i></a>
+                  <a href="https://github.com/mfurqanabbas20" target="_blank"><i className="cursor-pointer fa-brands fa-github"></i></a>
                 </div>
                 </div>
             </div>

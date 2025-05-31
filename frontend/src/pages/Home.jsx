@@ -25,11 +25,10 @@ const HomePage = () => {
         </span>
       </div>
       <div className="social-icons text-white flex flex-col items-center text-lg gap-4 justify-end px-10 max-md:hidden">
-        <i className="cursor-pointer fa-brands fa-facebook-f"></i>
-        <i className="cursor-pointer fa-brands fa-twitter"></i>
-        <i className="cursor-pointer fa-brands fa-linkedin-in"></i>
-        <i className="cursor-pointer fa-brands fa-github"></i>
-        <i className="cursor-pointer fa-brands fa-instagram"></i>
+        <a href="https://www.facebook.com/malikmuhammadfurqan.abbas" target="_blank"><i className="cursor-pointer fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/muhammad-furqan-abbas-870125233" target="_blank"><i className="cursor-pointer fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.upwork.com/freelancers/~017100bad51363e86d" target="_blank"><i className="fa-brands fa-upwork cursor-pointer"></i></a>
+        <a href="https://github.com/mfurqanabbas20" target="_blank"><i className="cursor-pointer fa-brands fa-github"></i></a>
       </div>
     </div>
   );
