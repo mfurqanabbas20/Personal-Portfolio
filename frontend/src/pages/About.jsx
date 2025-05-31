@@ -1,5 +1,6 @@
 import about_img from '../assets/about_img.jpg'
 import {motion} from 'framer-motion'
+import cv from '../../public/CV_Furqan.pdf'
 
 const About = ({setSelectedTab}) => {
 
@@ -36,7 +37,7 @@ const About = ({setSelectedTab}) => {
                     </div>
                 </div>
                 <div className='flex items-center gap-4'>
-                <button className='bg-green-700 text-white w-40 rounded-full h-10 font-poppins text-sm'>Download CV</button>
+                <button onClick={() => window.location.href=cv} className='bg-green-700 text-white w-40 rounded-full h-10 font-poppins text-sm cursor-pointer'>Download CV</button>
                 <hr className='border-white w-14 opacity-80' />
                 <div className="social-icons text-white flex items-center text-lg gap-4 justify-end">
                   <a href="https://www.facebook.com/malikmuhammadfurqan.abbas" target="_blank"><i className="cursor-pointer fa-brands fa-facebook-f"></i></a>

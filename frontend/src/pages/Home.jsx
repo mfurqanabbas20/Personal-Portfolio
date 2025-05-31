@@ -60,7 +60,7 @@ const Home = () => {
         <source src={background_video} type="video/mp4" />
       </video>
       <div className={selectedTab === 'home' ? "fixed py-4 z-20 w-full h-full" : "py-4 z-20 w-full h-full"}>
-        <Navbar setSelectedTab={setSelectedTab} />
+        <Navbar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
         <div className="h-full">
           <RenderPage selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
         </div>
