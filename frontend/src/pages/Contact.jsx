@@ -90,7 +90,7 @@ const Contact = ({setSelectedTab}) => {
                 </div>
                 <div>
                     <h1 className="font-bold text-md">Location</h1>
-                    <p className="text-sm opacity-90">Gujrat, Punjab, Pakistan</p>
+                    <p className="text-sm opacity-90">Lahore, Punjab, Pakistan</p>
                 </div>
                 <div>
                     <h1 className="font-bold text-md">Call Me</h1>

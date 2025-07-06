@@ -1,6 +1,5 @@
 import logo from '../assets/logo.png'
 import cv from '../../public/CV_Furqan.pdf'
-import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import {motion} from 'framer-motion'
 
