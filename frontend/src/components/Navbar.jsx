@@ -25,6 +25,9 @@ const Navbar = ({selectedTab, setSelectedTab}) => {
                 <li className='cursor-pointer' onClick={() => setSelectedTab('about')}>About</li>
               </div>
               <div className='hover:border-b-2 border-green-600 transition-all'>
+                <li className='cursor-pointer' onClick={() => setSelectedTab('workExperience')}>Work Experience</li>
+              </div>
+              <div className='hover:border-b-2 border-green-600 transition-all'>
                 <li className='cursor-pointer' onClick={() => setSelectedTab('projects')}>Projects</li>
               </div>
               <div className='hover:border-b-2 border-green-600 transition-all'>
