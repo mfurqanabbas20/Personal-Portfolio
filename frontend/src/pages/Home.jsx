@@ -5,6 +5,7 @@ import background_video from "../assets/background.mp4";
 import Projects from "./Projects.jsx";
 import Contact from "./Contact.jsx";
 import { Typewriter } from 'react-simple-typewriter'
+import WorkExperience from "./Workexperience.jsx";
 
 
 const HomePage = () => {
@@ -40,6 +41,8 @@ const RenderPage = ({ selectedTab, setSelectedTab }) => {
       return <HomePage />;
     case "about":
       return <About setSelectedTab={setSelectedTab}/>;
+    case "workExperience":
+      return <WorkExperience setSelectedTab={setSelectedTab} />
     case "projects":
       return <Projects setSelectedTab={setSelectedTab}/>
     case "contact":
