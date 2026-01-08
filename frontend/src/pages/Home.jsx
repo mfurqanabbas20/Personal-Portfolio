@@ -5,7 +5,7 @@ import background_video from "../assets/background.mp4";
 import Projects from "./Projects.jsx";
 import Contact from "./Contact.jsx";
 import { Typewriter } from 'react-simple-typewriter'
-import WorkExperience from "./Workexperience.jsx";
+import WorkExperience from "./WorkExperience.jsx";
 
 
 const HomePage = () => {
