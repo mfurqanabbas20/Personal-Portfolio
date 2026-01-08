@@ -82,7 +82,7 @@ const Contact = ({setSelectedTab}) => {
                <i class="fa-solid fa-phone-volume"></i>
                <i class="fa-solid fa-envelope"></i>
              </div>
-             <hr className="border-white border-1 h-full" />
+             <hr className="border-white border h-full" />
              <div className="content font-poppins flex flex-col gap-2">
                 <div>
                     <h1 className="font-bold text-md">Name</h1>
