@@ -1,23 +1,41 @@
 import linkbridge from '../assets/linkbridge.png'
 import jpw from '../assets/jpw.png'
 import food_delivery from '../assets/food-delivery.png'
-import java_swing from '../assets/java-swing.png'
-import sql from '../assets/sql-server.jpg'
-import {motion} from 'framer-motion'
-const ProjectCard = ({stack, image, title, description, link}) => {
+import java_swing from '../assets/java-swing.png';
+import fisar from '../assets/fisar.png'
+import sql from '../assets/sql.jpg'
+import {motion} from 'framer-motion';
+import html from "../assets/skills/html.png";
+import css from "../assets/skills/css.png";
+import js from "../assets/skills/js.png";
+import typescript from "../assets/skills/typescript.png";
+import react from "../assets/skills/react.png";
+import next from "../assets/skills/nextjs.png";
+import java from "../assets/skills/java.png";
+import node from "../assets/skills/node.png";
+import github from "../assets/skills/github.png";
+import docker from "../assets/skills/docker.png";
+import aws from "../assets/skills/aws.png";
+import pg from "../assets/skills/postgre.png";
+
+const ProjectCard = ({stack, image, title, description, link, images}) => {
     return(
         <div className="w-96 lg:w-[32%] text-white font-poppins flex flex-col gap-1 relative">
           <div className="image-container relative w-full group">
-            <img className='my-2 h-56 object-fill rounded-md w-full' src={image} alt="" />
+            <img className='my-2 h-48 object-center rounded-md w-full' src={image} alt="" />
             <a target='_blank' className='text-white absolute top-5/12 left-5/12 bg-stone-900/60 p-2 cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-md' href={link}><i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;&nbsp;Link</a>
           </div>
-            <h1 className='text-2xl font-bold'>{title}</h1>
-            <p className='text-xs tracking-wide text-slate-200 pb-10'>{description}</p>
-            <p className='badge text-sm absolute bottom-1'>Tech Stack: <span className='bg-orange-600 rounded-full px-2 py-1'>{stack}</span></p>
+          <h1 className='text-2xl font-bold'>{title}</h1>
+          <p className='text-xs tracking-wide text-slate-200'>{description}</p>
+          <p className='badge text-xs font-semibold bottom-1'>Tech Stack</p>
+          <div className='flex items-center gap-2'>
+            {images && images.map((item) => (
+              <img className='size-6' src={item} />
+            ))}
+          </div>
         </div>
     )
 }
-
 
 const Projects = ({setSelectedTab}) => {
   return (
@@ -33,11 +51,47 @@ const Projects = ({setSelectedTab}) => {
         <h1 className='font-bold text-3xl text-white text-center'>My Projects</h1>
         <hr className='border-green-500 w-10 mx-auto my-3 border-2 hover:w-20 transition-all' />
         <div className='flex flex-wrap justify-start w-x gap-4 max-lg:justify-center px-10 max-md:px-6'>
-        <ProjectCard stack={'MERN Stack'} image={linkbridge} title={'LinkBridge'} description={'An Innovative AI-Powered platform that connects student with industry professionals. Teachers can track their students final year projects progress. Key features includes, AI-Powered FYP ideas suggestion, NLP based peer review system, resource sharing, tracking and showcasing projects and real time communication.'} link={'https://linkbridgeweb.vercel.app'} />
-        <ProjectCard stack={'MERN Stack'} image={jpw} title={'JPW'} description={'An UK Based Pressure Washer store built using MERN Stack. This platform helps customer to buy pressures online with secure payment integration using stripe.'} link={'https://github.com/mfurqanabbas20/JPW'}  />
-        <ProjectCard stack={'MERN Stack'} image={food_delivery} title={'Food Delivery Shop'} description={'Online food store that enables customers to buy their favourite food, filter products based on category, place order and secure payment checkout for payment. Admin can manage products and change tracking status of products. '} link={'https://github.com/mfurqanabbas20/Food-App'} />
-        <ProjectCard stack={'SQL'} image={sql} title={'Pharmaceutical System'} description={'Semester project to create a database of pharmacy using SQL with MS SQL Server.'} link={'https://github.com/mfurqanabbas20/Food-App'} />
-        <ProjectCard stack={'Java Swing'} image={java_swing} title={'Shop Management System'} description={'Semester project that helps shop keepers to manage their shop effectively, managing products and customers. This system is built using java swing and mysql.'} link={'https://github.com/mfurqanabbas20/Shop-Management-System'} />
+        <ProjectCard 
+          image={fisar} 
+          images={[next, react, typescript, github, docker, aws]}
+          title={'FiSAR'} 
+          description={'Developed and maintained the frontend of FiSAR, a SaaS-based compliance platform for automating Subject Access Request (SAR) processing. Built user interfaces to support secure data aggregation, structured redaction workflows, and audit-ready delivery. Collaborated with cross-functional teams to enhance performance and usability, contributing to the reduction of SAR processing time from weeks to minutes while ensuring alignment with UK GDPR compliance standards.'}
+          link={'https://linkbridgeweb.vercel.app'} />
+        <ProjectCard 
+          image={linkbridge} 
+          images={[next, react, typescript, github, docker, aws]}
+          title={'Alertia'} 
+          description={'Alertia is a multi-tenant guard management platform designed for Mexico’s REPSE compliance. It enables security companies to manage guards by storing fixed and SAT documents, generating monthly compliance reports, assigning guards to clients, and securely uploading and tracking all required documentation from a single system.'}
+          link={'https://linkbridgeweb.vercel.app'} />
+        <ProjectCard 
+          stack={'MERN Stack'} 
+          image={linkbridge} 
+          title={'LinkBridge'} 
+          description={'An Innovative AI-Powered platform that connects student with industry professionals. Teachers can track their students final year projects progress. Key features includes, AI-Powered FYP ideas suggestion, NLP based peer review system, resource sharing, tracking and showcasing projects and real time communication.'} 
+          link={'https://linkbridgeweb.vercel.app'} />
+        <ProjectCard 
+          stack={'MERN Stack'} 
+          image={jpw}
+          title={'JPW'} 
+          description={'An UK Based Pressure Washer store built using MERN Stack. This platform helps customer to buy pressures online with secure payment integration using stripe.'} link={'https://github.com/mfurqanabbas20/JPW'}  />
+        <ProjectCard 
+          stack={'MERN Stack'} 
+          image={food_delivery} 
+          title={'Food Delivery Shop'} 
+          description={'Online food store that enables customers to buy their favourite food, filter products based on category, place order and secure payment checkout for payment. Admin can manage products and change tracking status of products. '} 
+          link={'https://github.com/mfurqanabbas20/Food-App'} />
+        <ProjectCard 
+          stack={'SQL'} 
+          image={sql} 
+          title={'Pharmaceutical System'} 
+          description={'Semester project to create a database of pharmacy using SQL with MS SQL Server.'} 
+          link={'https://github.com/mfurqanabbas20/Food-App'} />
+        <ProjectCard 
+          stack={'Java Swing'} 
+          image={java_swing} 
+          title={'Shop Management System'} 
+          description={'Semester project that helps shop keepers to manage their shop effectively, managing products and customers. This system is built using java swing and mysql.'} 
+          link={'https://github.com/mfurqanabbas20/Shop-Management-System'} />
         
          </div>
     </motion.div>

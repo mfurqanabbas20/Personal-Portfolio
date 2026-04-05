@@ -8,11 +8,11 @@ import react from "../assets/skills/react.png";
 import next from "../assets/skills/nextjs.png";
 import java from "../assets/skills/java.png";
 import node from "../assets/skills/node.png";
-import jfjd from "../assets/skills/react.png";
-import github from "../assets/skills/react.png";
-import docker from "../assets/skills/react.png";
-import aws from "../assets/skills/react.png";
-import sd from "../assets/skills/react.png";
+import github from "../assets/skills/github.png";
+import docker from "../assets/skills/docker.png";
+import aws from "../assets/skills/aws.png";
+import pg from "../assets/skills/postgre.png";
+
 
 const companies = [
 	{name: "Stack360", role: "Associate Software Engineer", date: "July 2025 - Present", description: [
@@ -30,14 +30,20 @@ const companies = [
 ];
 
 const skills = [
-	// require("../asse/ts/skills/html.png"),
 	html,
 	css,
 	js,
 	typescript,
 	react,
+	next,
 	java,
 	node,
+	github,
+	docker,
+	aws,
+	// mongo,
+	pg,
+
 	// require("../../public/skills/css.png"),
 	// require("../../public/skills/js.png"),
 	// require("../../public/skills/typescript.png"),
