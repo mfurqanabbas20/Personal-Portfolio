@@ -1,6 +1,18 @@
-import React from 'react';
 import {motion} from 'framer-motion';
 import profilePic from "../assets/profilePic.png";
+import html from "../assets/skills/html.png";
+import css from "../assets/skills/css.png";
+import js from "../assets/skills/js.png";
+import typescript from "../assets/skills/react.png";
+import react from "../assets/skills/react.png";
+import next from "../assets/skills/nextjs.png";
+import java from "../assets/skills/java.png";
+import node from "../assets/skills/node.png";
+import jfjd from "../assets/skills/react.png";
+import github from "../assets/skills/react.png";
+import docker from "../assets/skills/react.png";
+import aws from "../assets/skills/react.png";
+import sd from "../assets/skills/react.png";
 
 const companies = [
 	{name: "Stack360", role: "Associate Software Engineer", date: "July 2025 - Present", description: [
@@ -15,6 +27,25 @@ const companies = [
 		"Worked with Git for version control and participated in team-based Agile development.",
 	]
 	},
+];
+
+const skills = [
+	// require("../asse/ts/skills/html.png"),
+	html,
+	css,
+	js,
+	typescript,
+	react,
+	java,
+	node,
+	// require("../../public/skills/css.png"),
+	// require("../../public/skills/js.png"),
+	// require("../../public/skills/typescript.png"),
+	// require("../../public/skills/react.png"),
+	// require("../../public/skills/html.png"),
+	// require("../../public/skills/html.png"),
+	// require("../../public/skills/html.png"),
+
 ]
 
 const WorkExperience = ({setSelectedTab}) => {
@@ -74,6 +105,16 @@ return (
 						<div className="stack">
 
 						</div>
+					</div>
+				</div>
+				<div className='text-white'>
+					<h1>Skills:</h1>
+					<div className='flex items-center gap-2 my-4'>
+						{
+							skills.map((item) => (
+								<img className='size-12 object-cover' src={item} />
+							))
+						}
 					</div>
 				</div>
 			</div>

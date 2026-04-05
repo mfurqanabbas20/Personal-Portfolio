@@ -1,6 +1,6 @@
 import about_img from '../assets/about_img.jpg'
 import {motion} from 'framer-motion'
-import cv from '../../public/CV_Furqan.pdf'
+import cv from '../../src/assets/CV_Furqan.pdf'
 
 const About = ({setSelectedTab}) => {
 
