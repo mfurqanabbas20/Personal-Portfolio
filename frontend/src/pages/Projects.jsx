@@ -3,36 +3,25 @@ import jpw from '../assets/jpw.png'
 import food_delivery from '../assets/food-delivery.png'
 import java_swing from '../assets/java-swing.png';
 import fisar from '../assets/fisar.png'
+import alertia from '../assets/alertia.png'
 import sql from '../assets/sql.jpg'
 import {motion} from 'framer-motion';
-import html from "../assets/skills/html.png";
-import css from "../assets/skills/css.png";
-import js from "../assets/skills/js.png";
 import typescript from "../assets/skills/typescript.png";
 import react from "../assets/skills/react.png";
 import next from "../assets/skills/nextjs.png";
-import java from "../assets/skills/java.png";
-import node from "../assets/skills/node.png";
 import github from "../assets/skills/github.png";
 import docker from "../assets/skills/docker.png";
 import aws from "../assets/skills/aws.png";
-import pg from "../assets/skills/postgre.png";
 
 const ProjectCard = ({stack, image, title, description, link, images}) => {
     return(
         <div className="w-96 lg:w-[32%] text-white font-poppins flex flex-col gap-1 relative">
           <div className="image-container relative w-full group">
-            <img className='my-2 h-48 object-center rounded-md w-full' src={image} alt="" />
+            <img className='my-2 h-48 object-cover rounded-md w-full' src={image} alt="" />
             <a target='_blank' className='text-white absolute top-5/12 left-5/12 bg-stone-900/60 p-2 cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-md' href={link}><i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;&nbsp;Link</a>
           </div>
           <h1 className='text-2xl font-bold'>{title}</h1>
           <p className='text-xs tracking-wide text-slate-200'>{description}</p>
-          <p className='badge text-xs font-semibold bottom-1'>Tech Stack</p>
-          <div className='flex items-center gap-2'>
-            {images && images.map((item) => (
-              <img className='size-6' src={item} />
-            ))}
-          </div>
         </div>
     )
 }
@@ -58,7 +47,7 @@ const Projects = ({setSelectedTab}) => {
           description={'Developed and maintained the frontend of FiSAR, a SaaS-based compliance platform for automating Subject Access Request (SAR) processing. Built user interfaces to support secure data aggregation, structured redaction workflows, and audit-ready delivery. Collaborated with cross-functional teams to enhance performance and usability, contributing to the reduction of SAR processing time from weeks to minutes while ensuring alignment with UK GDPR compliance standards.'}
           link={'https://linkbridgeweb.vercel.app'} />
         <ProjectCard 
-          image={linkbridge} 
+          image={alertia} 
           images={[next, react, typescript, github, docker, aws]}
           title={'Alertia'} 
           description={'Alertia is a multi-tenant guard management platform designed for Mexico’s REPSE compliance. It enables security companies to manage guards by storing fixed and SAT documents, generating monthly compliance reports, assigning guards to clients, and securely uploading and tracking all required documentation from a single system.'}
