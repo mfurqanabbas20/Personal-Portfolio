@@ -38,13 +38,12 @@ const skills = [
 	aws,
 	github,
 	docker,
-	// mongo,
 ]
 
 const SkillsSection = () => {
     return(
         <div className='text-white'>
-			<h1>Skills:</h1>
+			<h1 className="font-semibold">Skills:</h1>
 			<div className='flex items-center flex-wrap gap-4 my-4'>
 				{
 					skills.map((item) => (

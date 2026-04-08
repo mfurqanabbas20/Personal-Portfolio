@@ -4,14 +4,7 @@ import food_delivery from '../assets/food-delivery.png'
 import java_swing from '../assets/java-swing.png';
 import fisar from '../assets/fisar.png'
 import alertia from '../assets/alertia.png'
-import sql from '../assets/sql.jpg'
 import {motion} from 'framer-motion';
-import typescript from "../assets/skills/typescript.png";
-import react from "../assets/skills/react.png";
-import next from "../assets/skills/nextjs.png";
-import github from "../assets/skills/github.png";
-import docker from "../assets/skills/docker.png";
-import aws from "../assets/skills/aws.png";
 
 const ProjectCard = ({stack, image, title, description, link, images}) => {
     return(
@@ -42,16 +35,14 @@ const Projects = ({setSelectedTab}) => {
         <div className='flex flex-wrap justify-start w-x gap-4 max-lg:justify-center px-10 max-md:px-6'>
         <ProjectCard 
           image={fisar} 
-          images={[next, react, typescript, github, docker, aws]}
           title={'FiSAR'} 
           description={'Developed and maintained the frontend of FiSAR, a SaaS-based compliance platform for automating Subject Access Request (SAR) processing. Built user interfaces to support secure data aggregation, structured redaction workflows, and audit-ready delivery. Collaborated with cross-functional teams to enhance performance and usability, contributing to the reduction of SAR processing time from weeks to minutes while ensuring alignment with UK GDPR compliance standards.'}
-          link={'https://linkbridgeweb.vercel.app'} />
+          link={'https://staging.fisar.co.uk'} />
         <ProjectCard 
           image={alertia} 
-          images={[next, react, typescript, github, docker, aws]}
           title={'Alertia'} 
           description={'Alertia is a multi-tenant guard management platform designed for Mexico’s REPSE compliance. It enables security companies to manage guards by storing fixed and SAT documents, generating monthly compliance reports, assigning guards to clients, and securely uploading and tracking all required documentation from a single system.'}
-          link={'https://linkbridgeweb.vercel.app'} />
+          link={'https://cumpleconrepse.com/'} />
         <ProjectCard 
           stack={'MERN Stack'} 
           image={linkbridge} 
@@ -70,18 +61,11 @@ const Projects = ({setSelectedTab}) => {
           description={'Online food store that enables customers to buy their favourite food, filter products based on category, place order and secure payment checkout for payment. Admin can manage products and change tracking status of products. '} 
           link={'https://github.com/mfurqanabbas20/Food-App'} />
         <ProjectCard 
-          stack={'SQL'} 
-          image={sql} 
-          title={'Pharmaceutical System'} 
-          description={'Semester project to create a database of pharmacy using SQL with MS SQL Server.'} 
-          link={'https://github.com/mfurqanabbas20/Food-App'} />
-        <ProjectCard 
           stack={'Java Swing'} 
           image={java_swing} 
           title={'Shop Management System'} 
           description={'Semester project that helps shop keepers to manage their shop effectively, managing products and customers. This system is built using java swing and mysql.'} 
           link={'https://github.com/mfurqanabbas20/Shop-Management-System'} />
-        
          </div>
     </motion.div>
   )
