@@ -28,6 +28,9 @@ const Navbar = ({selectedTab, setSelectedTab}) => {
                 <li className='cursor-pointer' onClick={() => setSelectedTab('workExperience')}>Work Experience</li>
               </div>
               <div className='hover:border-b-2 border-green-600 transition-all'>
+                <li className='cursor-pointer' onClick={() => setSelectedTab('services')}>Services</li>
+              </div>
+              <div className='hover:border-b-2 border-green-600 transition-all'>
                 <li className='cursor-pointer' onClick={() => setSelectedTab('projects')}>Projects</li>
               </div>
               <div className='hover:border-b-2 border-green-600 transition-all'>
@@ -51,6 +54,12 @@ const Navbar = ({selectedTab, setSelectedTab}) => {
           <ul className='flex flex-col items-center gap-8 text-white'>
               <div className='hover:border-b-2 border-green-600 transition-all'>
                 <li className='cursor-pointer' onClick={() => handleSmallScreenMenu('about')}>About</li>
+              </div>
+              <div className='hover:border-b-2 border-green-600 transition-all'>
+                <li className='cursor-pointer' onClick={() => handleSmallScreenMenu('workExperience')}>Work Experience</li>
+              </div>
+              <div className='hover:border-b-2 border-green-600 transition-all'>
+                <li className='cursor-pointer' onClick={() => handleSmallScreenMenu('services')}>Services</li>
               </div>
               <div className='hover:border-b-2 border-green-600 transition-all'>
                 <li className='cursor-pointer' onClick={() => handleSmallScreenMenu('projects')}>Projects</li>

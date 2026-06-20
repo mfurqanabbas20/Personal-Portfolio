@@ -10,6 +10,7 @@ const Contact = ({setSelectedTab}) => {
         subject: '',
         message: ''
     })
+    const [isSending, setIsSending] = useState(false)
 
     const handleChange = (e) => {
         setData((prev) => {
@@ -19,33 +20,34 @@ const Contact = ({setSelectedTab}) => {
             }
         })
     }
-    const handleClick = () => {
-        console.log(data);
-        if(data.fullname === ''){
-            console.log("HI");
-        }
-        if(data.email === ''){
-            console.log('Email');
-        }
-        if(data.subject === ''){
-            console.log('Subject');
-        }
-        if(data.message === ''){
-            console.log('message');
-        }
+
+    const toastOptions = { position: 'bottom-left', autoClose: 2500, theme: 'dark' }
+
+    const handleClick = async () => {
         if(data.fullname === '' || data.email === '' || data.subject === '' || data.message === ''){
-            toast.error('Complete all fields', {
-            position: 'bottom-left', 
-            autoClose: 2000,
-            theme: 'dark',
-        })
+            toast.error('Complete all fields', toastOptions)
+            return
         }
-        else {
-            toast.success('Message sent successfully', {
-                position: 'bottom-left', 
-                autoClose: 2000,
-                theme: 'dark',
+
+        setIsSending(true)
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
             })
+            const result = await res.json()
+
+            if (res.ok && result.success) {
+                toast.success('Message sent successfully', toastOptions)
+                setData({ fullname: '', email: '', subject: '', message: '' })
+            } else {
+                toast.error(result.error || 'Failed to send message. Please try again.', toastOptions)
+            }
+        } catch (err) {
+            toast.error('Could not reach the server. Please try again later.', toastOptions)
+        } finally {
+            setIsSending(false)
         }
     }
 
@@ -65,12 +67,14 @@ const Contact = ({setSelectedTab}) => {
         <div className="form w-7/12 max-md:w-full">
             <h1 className="font-semibold text-2xl text-white">Message Me</h1>
             <div className="flex gap-4 flex-wrap my-6">
-            <input onChange={handleChange} className="h-10 text-white opacity-80 p-4 outline-none outline-green-500 bg-zinc-800 flex-1" placeholder="Full Name" type="text" name="fullname" />
-            <input onChange={handleChange} className="h-10 text-white opacity-80 p-4 outline-none outline-green-500 bg-zinc-800 flex-1" placeholder="Email" type="text"name="email" />
-            <input onChange={handleChange} className="h-10 text-white opacity-80 p-4 outline-none outline-green-500 bg-zinc-800 w-full" placeholder="Subject" type="text" name="subject" />
-            <input onChange={handleChange} className="h-40 text-white opacity-80 p-4 outline-none outline-green-500 bg-zinc-800 w-full" placeholder="Message" type="text" name="message" />
+            <input value={data.fullname} onChange={handleChange} className="h-10 text-white opacity-80 p-4 outline-none outline-green-500 bg-zinc-800 flex-1" placeholder="Full Name" type="text" name="fullname" />
+            <input value={data.email} onChange={handleChange} className="h-10 text-white opacity-80 p-4 outline-none outline-green-500 bg-zinc-800 flex-1" placeholder="Email" type="text"name="email" />
+            <input value={data.subject} onChange={handleChange} className="h-10 text-white opacity-80 p-4 outline-none outline-green-500 bg-zinc-800 w-full" placeholder="Subject" type="text" name="subject" />
+            <textarea value={data.message} onChange={handleChange} className="h-40 text-white opacity-80 p-4 outline-none outline-green-500 bg-zinc-800 w-full resize-none" placeholder="Message" name="message" />
             </div>
-            <button onClick={handleClick} className='bg-green-700 text-white w-40 rounded-full h-10 font-poppins text-sm cursor-pointer'>Send Message</button>
+            <button onClick={handleClick} disabled={isSending} className='bg-green-700 hover:bg-green-600 disabled:opacity-60 disabled:cursor-not-allowed text-white w-40 rounded-full h-10 font-poppins text-sm cursor-pointer transition-colors'>
+              {isSending ? 'Sending...' : 'Send Message'}
+            </button>
         </div>
         <div className="contact-info w-4/12 flex flex-col gap-4 max-md:w-full max-md:mt-5">
             <h1 className="font-semibold text-2xl text-white">Contact Info</h1>
