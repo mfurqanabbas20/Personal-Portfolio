@@ -6,7 +6,7 @@ const topLangs = `https://github-readme-stats.vercel.app/api/top-langs/?username
 const quickLinks = [
   { label: 'About', tab: 'about' },
   { label: 'Work Experience', tab: 'workExperience' },
-  { label: 'Services', tab: 'services' },
+  { label: 'Services', tab: 'services' }, 
   { label: 'Projects', tab: 'projects' },
   { label: 'Contact', tab: 'contact' },
 ]
