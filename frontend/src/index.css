@@ -1,28 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-poppins: "Poppins", "sans-serif"; 
+  --color-paper: #eeece7;    /* page background */
+  --color-bone: #e4e1da;     /* raised paper surface */
+  --color-ink: #0e0e0e;      /* text + dark sections */
+  --color-graphite: #1a1a1a; /* surfaces on dark */
+  --color-stone: #6f6d67;    /* muted text on paper */
+  --color-fog: #a3a19b;      /* muted text on ink */
+  --color-signal: #ff4f1f;   /* accent */
+  --color-live: #1fbf5c;     /* availability dot */
+
+  /* One typeface for the whole site */
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Lenis recommended styles */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
 
+html { scroll-padding-top: 5rem; }
 
-.slide-in {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #0f0f0f;
-  transform-origin: bottom;
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-.slide-out {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #0f0f0f;
-  transform-origin: top;
+::selection { background: var(--color-signal); color: var(--color-paper); }
+
+@layer components {
+  /* Small supporting text: eyebrows, captions, meta. Same family, no all-caps. */
+  .label {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* SplitText masks: pad the clip box so tight tracking / descenders aren't cut */
+  .ch-mask { padding-inline: 0.08em; margin-inline: -0.08em; }
+  .ln-mask { padding-bottom: 0.1em; margin-bottom: -0.1em; }
+
+  /* Roll-over text: slides up and a duplicate slides in (on the text or its link/button) */
+  .roll { display: inline-flex; overflow: hidden; position: relative; }
+  .roll > span { display: block; transition: transform 0.55s cubic-bezier(0.19, 1, 0.22, 1); }
+  .roll > span:last-child { position: absolute; inset: 0; transform: translateY(100%); }
+  .roll:hover > span:first-child, a:hover .roll > span:first-child, button:hover .roll > span:first-child { transform: translateY(-100%); }
+  .roll:hover > span:last-child, a:hover .roll > span:last-child, button:hover .roll > span:last-child { transform: translateY(0); }
+
+  /* Availability ping */
+  @keyframes ping-soft {
+    0% { transform: scale(1); opacity: 0.7; }
+    70%, 100% { transform: scale(2.6); opacity: 0; }
+  }
+  .dot-ping::after {
+    content: ''; position: absolute; inset: 0; border-radius: 9999px;
+    background: var(--color-live);
+    animation: ping-soft 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Form fields on the dark contact section */
+  .field {
+    width: 100%; background: rgb(238 236 231 / 0.04);
+    border: 1px solid rgb(238 236 231 / 0.14); border-radius: 0.75rem;
+    padding: 0.85rem 1rem; font-size: 1rem; color: var(--color-paper); outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  .field::placeholder { color: rgb(238 236 231 / 0.35); }
+  .field:focus { border-color: var(--color-signal); background: rgb(238 236 231 / 0.07); }
+  .field option { background: var(--color-ink); color: var(--color-paper); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot-ping::after { animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
